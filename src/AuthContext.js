@@ -45,17 +45,21 @@ export const AuthProvider = ({ children }) => {
       );
       
       const data = response.data;
-
-      // Backend returns: { message: "Login successful", user: {...} }
       const userData = data.user;
 
       if (!userData) {
         throw new Error('Invalid response from server');
       }
 
-      // Store user data in localStorage and state
+      // ✅ Store user data
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
+
+      // ✅ If backend returns a token, store it & attach to axios
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+      }
 
       console.log('Login successful:', { 
         name: userData.name, 
@@ -63,35 +67,46 @@ export const AuthProvider = ({ children }) => {
         isAdmin: userData.isAdmin 
       });
 
-      // Return the user data object
       return userData;
     } catch (error) {
       console.error('Authentication failed:', error.response?.data?.error || error.message);
       
       // Clear any partial state
       localStorage.removeItem('user');
+      localStorage.removeItem('token');
       setUser(null);
       
-      // Return null instead of throwing to match LoginPage expectations
       return null;
     }
   };
 
   const logout = async () => {
     try {
-      // Call backend logout to invalidate session
       await axios.post(API_LOGOUT_URL, {}, { withCredentials: true });
-      
+
+      // ✅ Clear local storage & axios header
       localStorage.removeItem('user');
+      localStorage.removeItem('token');
+      delete axios.defaults.headers.common['Authorization'];
       setUser(null);
+
       console.log('Logged out successfully');
     } catch (err) {
       console.error('Logout error:', err);
-      // Still clear local data even if API call fails
       localStorage.removeItem('user');
+      localStorage.removeItem('token');
+      delete axios.defaults.headers.common['Authorization'];
       setUser(null);
     }
   };
+
+  // ✅ Restore token on page reload
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+  }, []);
 
   // Keep state in sync if another tab changes localStorage
   useEffect(() => {
