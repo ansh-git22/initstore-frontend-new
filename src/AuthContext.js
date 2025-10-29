@@ -2,8 +2,8 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
 // FIXED: Changed from /signin to /login to match your backend
-const API_LOGIN_URL = 'http://localhost:8080/api/auth/login';
-const API_LOGOUT_URL = 'http://localhost:8080/api/auth/logout';
+const API_LOGIN_URL = 'https://initstore-backend-4.onrender.com/api/auth/login';
+const API_LOGOUT_URL = 'https://initstore-backend-4.onrender.com/api/auth/logout';
 
 // CRITICAL: Configure axios to send cookies with every request
 axios.defaults.withCredentials = true;

@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 import { useNotification } from '../context/NotificationContext'; 
 import { formatINR } from '../utils/formatCurrency'; // <-- CRITICAL IMPORT
 
-const API_BASE_URL = 'http://localhost:8080/api/products';
+const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products';
 
 const ProductDetailPage = () => {
     const { id } = useParams();

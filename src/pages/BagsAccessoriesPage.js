@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard'; // Assuming ProductCard is now standalone
 
-const API_BASE_URL = 'http://localhost:8080/api/products'; 
+const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
 const categoryName = 'Bags & Accessories'; // Moved to top level, outside component
 
 const BagsAccessoriesPage = () => {

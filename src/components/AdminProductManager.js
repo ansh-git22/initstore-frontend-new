@@ -4,7 +4,7 @@ import { formatINR } from '../utils/formatCurrency';
 import { useNotification } from '../context/NotificationContext';
 import AddProductForm from './AddProductForm';
 
-const API_URL = 'http://localhost:8080/api/products'; 
+const API_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
 
 const AdminProductManager = () => {
     const [products, setProducts] = useState([]);

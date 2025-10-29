@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import { formatINR } from '../utils/formatCurrency'; // <-- CRITICAL FIX: The import that makes INR available
 
 // Use your Spring Boot API base URL (usually 8080)
-const API_BASE_URL = 'http://localhost:8080/api/products'; 
+const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
 
 const TopsShirtsPage = () => {
     const [products, setProducts] = useState([]);

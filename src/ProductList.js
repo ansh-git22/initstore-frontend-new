@@ -72,7 +72,7 @@ const ProductList = ({ selectedCategory, searchQuery }) => {
     const [products, setProducts] = useState([]);
     const [status, setStatus] = useState('loading');
     
-    const API_BASE_URL = 'http://localhost:8080/api/products'; 
+    const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
 
     useEffect(() => {
         const fetchProducts = async () => {

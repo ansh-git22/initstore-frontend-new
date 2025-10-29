@@ -5,7 +5,7 @@ import { useNotification } from '../context/NotificationContext';
 // CRITICAL: Enable credentials for session-based auth
 axios.defaults.withCredentials = true;
 
-const API_URL = 'http://localhost:8080/api/users'; 
+const API_URL = 'https://initstore-backend-4.onrender.com/api/users'; 
 
 const AdminUserManager = () => {
     const [users, setUsers] = useState([]);
