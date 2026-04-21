@@ -5,7 +5,6 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../AuthContext'; 
 import { Link, useNavigate } from 'react-router-dom';
 import AnimatedSuccessIcon from '../components/AnimatedSuccessIcon'; 
-<<<<<<< HEAD
 import axios from 'axios';
 
 import { API } from '../config';
@@ -15,15 +14,6 @@ const API_BASE_URL = API.ORDERS;
 // ----------------------------------------------------------------------
 // ✅ FIX: Using the live Render backend URL and the correct plural path /api/orders
 // ---------------------------------------------------------------------
-=======
-import axios from 'axios'; 
-
-// ----------------------------------------------------------------------
-// ✅ FIX: Using the live Render backend URL and the correct plural path /api/orders
-const BACKEND_DOMAIN = 'https://initstore-backend-4.onrender.com'; 
-const API_BASE_URL = `${BACKEND_DOMAIN}/api/orders`; 
-// ----------------------------------------------------------------------
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 // Configure axios to send credentials
 axios.defaults.withCredentials = true;

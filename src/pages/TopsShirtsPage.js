@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
-<<<<<<< HEAD
 import { formatINR } from '../utils/formatCurrency'; 
 
 import { API } from '../config';
@@ -9,12 +8,6 @@ import { API } from '../config';
 const API_BASE_URL = API.PRODUCTS;// <-- CRITICAL FIX: The import that makes INR available
 
 // Use your Spring Boot API base URL (usually 8080)
-=======
-import { formatINR } from '../utils/formatCurrency'; // <-- CRITICAL FIX: The import that makes INR available
-
-// Use your Spring Boot API base URL (usually 8080)
-const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 const TopsShirtsPage = () => {
     const [products, setProducts] = useState([]);

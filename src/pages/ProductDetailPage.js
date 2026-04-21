@@ -5,15 +5,11 @@ import { useCart } from '../context/CartContext';
 import { useNotification } from '../context/NotificationContext'; 
 import { formatINR } from '../utils/formatCurrency'; // <-- CRITICAL IMPORT
 
-<<<<<<< HEAD
 
 import { API } from '../config';
 
 const API_BASE_URL = API.PRODUCTS;
 
-=======
-const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products';
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 const ProductDetailPage = () => {
     const { id } = useParams();

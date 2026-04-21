@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-<<<<<<< HEAD
 import { useNotification } from '../context/NotificationContext';
 
 import { API } from '../config';
 
 const API_URL = `${API.AUTH}/signup`;// <-- Import Toast Hook
-=======
-import { useNotification } from '../context/NotificationContext'; // <-- Import Toast Hook
-
-const API_URL = 'https://initstore-backend-4.onrender.com/api/auth/signup';
-
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 const SignupPage = () => {
     const [credentials, setCredentials] = useState({ name: '', email: '', password: '' });
     const { showToast } = useNotification();

@@ -3,18 +3,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../AuthContext';
 import axios from 'axios';
 import { formatINR } from '../utils/formatCurrency';
-<<<<<<< HEAD
 import { API } from '../config';
 
 const API_BASE_URL = API.ORDERS;
 
 // Use full backend URL to match your AuthContext patter
-=======
-
-// Use full backend URL to match your AuthContext pattern
-const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/orders';
-
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 const MyOrdersPage = () => {
     const { user } = useAuth(); 
     
