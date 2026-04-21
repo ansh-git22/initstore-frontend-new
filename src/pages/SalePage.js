@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 
+<<<<<<< HEAD
 import { API } from '../config';
 
 const API_BASE_URL = API.PRODUCTS;
 
 
+=======
+const API_BASE_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
+>>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 const SalePage = () => {
     const [products, setProducts] = useState([]);

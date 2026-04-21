@@ -3,7 +3,11 @@ import axios from 'axios';
 import { formatINR } from '../utils/formatCurrency';
 import { useNotification } from '../context/NotificationContext';
 
+<<<<<<< HEAD
 const API_URL = 'https://initstore-backend-5.onrender.com/api/orders'; 
+=======
+const API_URL = 'https://initstore-backend-4.onrender.com/api/orders'; 
+>>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 const STATUS_OPTIONS = ['Processing', 'Shipped', 'Delivered', 'Cancelled'];
 
 const AdminOrderManager = () => {

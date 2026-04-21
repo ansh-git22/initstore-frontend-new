@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNotification } from '../context/NotificationContext';
 
+<<<<<<< HEAD
 const API_URL = 'https://initstore-backend-5.onrender.com/api/products';
 const CATEGORIES_URL = 'https://initstore-backend-5.onrender.com/api/categories';
+=======
+const API_URL = 'https://initstore-backend-4.onrender.com/api/products';
+const CATEGORIES_URL = 'https://initstore-backend-4.onrender.com/api/categories';
+>>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 const AddProductForm = ({ onClose, onSuccess, editProduct = null }) => {
     const { showToast } = useNotification();

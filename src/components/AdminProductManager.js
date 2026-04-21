@@ -4,7 +4,11 @@ import { formatINR } from '../utils/formatCurrency';
 import { useNotification } from '../context/NotificationContext';
 import AddProductForm from './AddProductForm';
 
+<<<<<<< HEAD
 const API_URL = 'https://initstore-backend-5.onrender.com/api/products'; 
+=======
+const API_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
+>>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
 
 const AdminProductManager = () => {
     const [products, setProducts] = useState([]);
