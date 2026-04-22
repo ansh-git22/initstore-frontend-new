@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-import { API } from '../config'; // ✅ USE CENTRAL CONFIG
+import { API } from './config'; // ✅ FIXED: was '../config', now './config' (same folder)
 
 // ✅ API endpoints from config
 const API_LOGIN_URL = `${API.AUTH}/login`;

@@ -4,11 +4,7 @@ import { formatINR } from '../utils/formatCurrency';
 import { useNotification } from '../context/NotificationContext';
 import AddProductForm from './AddProductForm';
 
-<<<<<<< HEAD
-const API_URL = 'https://initstore-backend-5.onrender.com/api/products'; 
-=======
-const API_URL = 'https://initstore-backend-4.onrender.com/api/products'; 
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
+const API_URL = 'https://initstore-backend-5.onrender.com/api/products';
 
 const AdminProductManager = () => {
     const [products, setProducts] = useState([]);
@@ -130,7 +126,6 @@ const AdminProductManager = () => {
                                         {product.isNew ? 'New' : (product.isSale ? 'Sale' : 'Standard')}
                                     </span>
                                 </td>
-                                
                                 <td className="px-6 py-4 whitespace-nowrap text-sm space-x-3">
                                     <button 
                                         onClick={() => handleEdit(product)} 
@@ -152,7 +147,6 @@ const AdminProductManager = () => {
                 </table>
             </div>
 
-            {/* CRITICAL: This renders the modal when showAddForm is true */}
             {(showAddForm || editingProduct) && (
                 <AddProductForm
                     onClose={handleCloseForm}
@@ -160,10 +154,6 @@ const AdminProductManager = () => {
                     editProduct={editingProduct}
                 />
             )}
-
-            {/* Debug info - remove this after testing */}
-            {console.log("showAddForm:", showAddForm)}
-            {console.log("editingProduct:", editingProduct)}
         </div>
     );
 };

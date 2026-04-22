@@ -5,11 +5,7 @@ import { useNotification } from '../context/NotificationContext';
 // CRITICAL: Enable credentials for session-based auth
 axios.defaults.withCredentials = true;
 
-<<<<<<< HEAD
-const API_URL = 'https://initstore-backend-5.onrender.com/api/users'; 
-=======
-const API_URL = 'https://initstore-backend-4.onrender.com/api/users'; 
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
+const API_URL = 'https://initstore-backend-5.onrender.com/api/users';
 
 const AdminUserManager = () => {
     const [users, setUsers] = useState([]);
@@ -21,7 +17,7 @@ const AdminUserManager = () => {
         setLoading(true);
         try {
             const response = await axios.get(API_URL, {
-                withCredentials: true // Enable cookies/session
+                withCredentials: true
             });
             setUsers(response.data);
             showToast(`Loaded ${response.data.length} users successfully`, 'success');
@@ -41,7 +37,7 @@ const AdminUserManager = () => {
     const handleChangeRole = async (userId, currentIsAdmin) => {
         try {
             const newAdminStatus = !currentIsAdmin;
-            const response = await axios.put(
+            await axios.put(
                 `${API_URL}/${userId}`,
                 { isAdmin: newAdminStatus },
                 { withCredentials: true }
@@ -52,7 +48,6 @@ const AdminUserManager = () => {
                 'success'
             );
             
-            // Refresh the user list
             fetchUsers();
         } catch (error) {
             showToast('Failed to update user role', 'error');
@@ -73,7 +68,6 @@ const AdminUserManager = () => {
             
             showToast(`User "${userName}" deleted successfully`, 'success');
             
-            // Refresh the user list
             fetchUsers();
         } catch (error) {
             showToast('Failed to delete user', 'error');
@@ -158,7 +152,6 @@ const AdminUserManager = () => {
                                         {user.isAdmin ? '👑 Admin' : '👤 Customer'}
                                     </span>
                                 </td>
-                                
                                 <td className="px-6 py-4 whitespace-nowrap text-sm space-x-3">
                                     <button 
                                         onClick={() => handleChangeRole(user.id, user.isAdmin)} 

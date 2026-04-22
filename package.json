@@ -14,14 +14,9 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  
-  
-<<<<<<< HEAD
-  "proxy": "https://initstore-backend-5.onrender.com", 
-=======
-  "proxy": "https://initstore-backend-4.onrender.com", 
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
-  
+
+  "proxy": "https://initstore-backend-5.onrender.com",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

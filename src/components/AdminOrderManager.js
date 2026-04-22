@@ -3,11 +3,7 @@ import axios from 'axios';
 import { formatINR } from '../utils/formatCurrency';
 import { useNotification } from '../context/NotificationContext';
 
-<<<<<<< HEAD
-const API_URL = 'https://initstore-backend-5.onrender.com/api/orders'; 
-=======
-const API_URL = 'https://initstore-backend-4.onrender.com/api/orders'; 
->>>>>>> 71d71638d88c4750ebf6ca5eb41dda7a60b1c763
+const API_URL = 'https://initstore-backend-5.onrender.com/api/orders';
 const STATUS_OPTIONS = ['Processing', 'Shipped', 'Delivered', 'Cancelled'];
 
 const AdminOrderManager = () => {
@@ -33,12 +29,10 @@ const AdminOrderManager = () => {
         fetchOrders();
     }, [fetchOrders]);
 
-    // FIXED: Use the correct endpoint for status update
     const handleStatusChange = async (orderId, newStatus) => {
         setIsUpdating(orderId);
         
         try {
-            // CORRECTED: Use the proper status update endpoint
             await axios.put(
                 `${API_URL}/${orderId}/status`, 
                 JSON.stringify(newStatus),
@@ -159,7 +153,6 @@ const AdminOrderManager = () => {
                                         {order.status}
                                     </span>
                                 </td>
-                                
                                 <td className="px-6 py-4 whitespace-nowrap text-sm">
                                     <select
                                         value={order.status}
